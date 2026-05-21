@@ -1,20 +1,37 @@
 {
   "workspace_version": 1,
-  "updated_at": "2026-05-21T00:00:00+08:00",
-  "status": "draft",
+  "updated_at": "2026-05-21T17:18:28+08:00",
+  "status": "active",
   "source_of_truth": {
     "type": "git_repository",
-    "url": "",
+    "url": "https://github.com/a303990788/agent-workspace",
     "branch": "main"
   },
-  "agents": [],
+  "agents": [
+    {
+      "name": "Codex",
+      "role": "workspace maintainer",
+      "permissions": [
+        "read",
+        "write",
+        "publish"
+      ]
+    },
+    {
+      "name": "Mira",
+      "role": "workflow advisor",
+      "permissions": [
+        "read"
+      ]
+    }
+  ],
   "tasks": [
     {
       "id": "T-001",
-      "status": "ready",
-      "owner": "unassigned",
+      "status": "done",
+      "owner": "Codex",
       "title": "将这个工作区发布到线上",
-      "updated_at": "2026-05-21T00:00:00+08:00"
+      "updated_at": "2026-05-21T17:18:28+08:00"
     },
     {
       "id": "T-002",
@@ -25,10 +42,10 @@
     },
     {
       "id": "T-003",
-      "status": "todo",
-      "owner": "unassigned",
+      "status": "in_progress",
+      "owner": "Mira",
       "title": "配置写入流程",
-      "updated_at": "2026-05-21T00:00:00+08:00"
+      "updated_at": "2026-05-21T17:18:28+08:00"
     },
     {
       "id": "T-004",
@@ -47,4 +64,3 @@
     }
   ]
 }
-
