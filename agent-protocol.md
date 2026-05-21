@@ -13,7 +13,22 @@
 1. `shared-context.md`
 2. `task-board.md`
 3. `decisions.md`
-4. `state.json`
+4. `handoffs.md`
+5. `state.json`
+
+## 主 Agent 与 Mira 协作流程
+
+Codex 是当前主 agent。Mira 由 Codex 负责调度。
+
+Codex 每次给 Mira 下达任务时，必须完成以下动作：
+
+1. 在 `task-board.md` 中创建或更新对应任务。
+2. 在 `handoffs.md` 中追加一条派发记录，写明任务 ID、目标、输入链接和期望产出。
+3. 如果任务改变全局状态，同步更新 `state.json`。
+4. Mira 返回结果后，在 `handoffs.md` 中追加反馈摘要、结果链接和下一步动作。
+5. 根据反馈把 `task-board.md` 中的任务状态更新为 `done`、`blocked`、`needs_review` 或继续保持 `in_progress`。
+
+Mira 不直接作为工作区最终裁决者。Mira 的输出需要由 Codex 汇总、确认并写回共享工作区。
 
 ## 认领任务
 
@@ -57,4 +72,3 @@
 ## 隐私
 
 不要写入密钥、token、私密凭证、个人数据或敏感业务内容，除非这个仓库的访问权限明确允许。
-

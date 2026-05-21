@@ -1,6 +1,6 @@
 {
   "workspace_version": 1,
-  "updated_at": "2026-05-21T17:18:28+08:00",
+  "updated_at": "2026-05-21T17:22:43+08:00",
   "status": "active",
   "source_of_truth": {
     "type": "git_repository",
@@ -10,21 +10,35 @@
   "agents": [
     {
       "name": "Codex",
-      "role": "workspace maintainer",
+      "role": "primary agent and workspace maintainer",
       "permissions": [
         "read",
         "write",
-        "publish"
+        "publish",
+        "delegate_to_mira",
+        "record_feedback"
       ]
     },
     {
       "name": "Mira",
-      "role": "workflow advisor",
+      "role": "delegated collaborator",
       "permissions": [
         "read"
       ]
     }
   ],
+  "coordination_policy": {
+    "primary_agent": "Codex",
+    "delegated_agents": [
+      "Mira"
+    ],
+    "handoff_log": "handoffs.md",
+    "rules": [
+      "Codex records every task assigned to Mira before or immediately after assignment.",
+      "Codex records Mira feedback in handoffs.md.",
+      "Codex updates task-board.md and state.json after each meaningful Mira result."
+    ]
+  },
   "tasks": [
     {
       "id": "T-001",
@@ -61,6 +75,11 @@
       "date": "2026-05-21",
       "decision": "默认使用 GitHub 风格的文件工作区作为共享事实来源。",
       "owner": "Codex"
+    },
+    {
+      "date": "2026-05-21",
+      "decision": "Codex 作为主 agent，负责给 Mira 下达任务，并将任务下达和反馈同步到工作区。",
+      "owner": "User / Codex"
     }
   ]
 }

@@ -16,6 +16,7 @@
 - `task-board.md`：任务队列、状态和负责人。
 - `decisions.md`：长期有效的决策、假设和变更记录。
 - `agent-protocol.md`：所有 agent 在读写前都应遵守的协作规则。
+- `handoffs.md`：主 agent 给 Mira 下达任务、Mira 反馈和后续处理记录。
 - `state.json`：机器可读的共享状态。
 
 ## Agent 启动流程
@@ -26,9 +27,16 @@
 2. `shared-context.md`
 3. `task-board.md`
 4. `decisions.md`
-5. `state.json`
+5. `handoffs.md`
+6. `state.json`
 
 然后再认领一个明确的任务。
+
+## 主 Agent 规则
+
+Codex 是当前主 agent，负责拆解任务、更新工作区、给 Mira 下达任务，并把 Mira 的反馈同步回工作区。
+
+Mira 是协作 agent，默认由 Codex 派发任务。每次派发都必须在 `handoffs.md` 留下记录。
 
 ## URL 访问方式
 
@@ -41,4 +49,3 @@ https://raw.githubusercontent.com/<owner>/<repo>/<branch>/state.json
 ```
 
 如果需要写入，优先使用 Pull Request 或带清晰说明的 commit。
-
