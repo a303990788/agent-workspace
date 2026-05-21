@@ -1,0 +1,50 @@
+{
+  "workspace_version": 1,
+  "updated_at": "2026-05-21T00:00:00+08:00",
+  "status": "draft",
+  "source_of_truth": {
+    "type": "git_repository",
+    "url": "",
+    "branch": "main"
+  },
+  "agents": [],
+  "tasks": [
+    {
+      "id": "T-001",
+      "status": "ready",
+      "owner": "unassigned",
+      "title": "将这个工作区发布到线上",
+      "updated_at": "2026-05-21T00:00:00+08:00"
+    },
+    {
+      "id": "T-002",
+      "status": "todo",
+      "owner": "unassigned",
+      "title": "补充项目专属背景",
+      "updated_at": "2026-05-21T00:00:00+08:00"
+    },
+    {
+      "id": "T-003",
+      "status": "todo",
+      "owner": "unassigned",
+      "title": "配置写入流程",
+      "updated_at": "2026-05-21T00:00:00+08:00"
+    },
+    {
+      "id": "T-004",
+      "status": "todo",
+      "owner": "unassigned",
+      "title": "添加 agent 名单",
+      "updated_at": "2026-05-21T00:00:00+08:00"
+    }
+  ],
+  "locks": [],
+  "decisions": [
+    {
+      "date": "2026-05-21",
+      "decision": "默认使用 GitHub 风格的文件工作区作为共享事实来源。",
+      "owner": "Codex"
+    }
+  ]
+}
+
